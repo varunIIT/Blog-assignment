@@ -4,6 +4,10 @@ const port=5000
 
 require('./config/db')// db connection
 
+const expressLayouts = require('express-ejs-layouts')
+app.set('view engine','ejs')
+app.use(expressLayouts)
+
 //body parsers
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))

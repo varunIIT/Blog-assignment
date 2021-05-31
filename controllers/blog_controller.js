@@ -11,7 +11,7 @@ module.exports.create=async (req,res)=>{
 }
 module.exports.readAll=async (req,res)=>{
     try{
-        const blogs=await Blog.find({})//find all blogs as geting an array of blogs
+        const blogs=await Blog.find({}).sort('-createdAt')//find all blogs as geting an array of blogs
         res.status(200).json(blogs)
     }
     catch(err){
